@@ -401,26 +401,13 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--plum);
-    margin-bottom: 15px;
+    margin-bottom: 60px;
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease;
   }
 
   .wishes-title.visible { opacity: 1; transform: translateY(0); }
-
-  .wishes-subtitle {
-    text-align: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--plum-light);
-    margin-bottom: 60px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s 0.2s ease;
-  }
-
-  .wishes-subtitle.visible { opacity: 1; transform: translateY(0); }
 
   .wishes-grid {
     display: grid;
@@ -778,20 +765,6 @@
     opacity: 0.6;
   }
 
-  .footer-heart {
-    display: inline-block;
-    color: var(--rose-deep);
-    animation: heartBeat 1.2s ease-in-out infinite;
-  }
-
-  @keyframes heartBeat {
-    0%, 100% { transform: scale(1); }
-    14% { transform: scale(1.15); }
-    28% { transform: scale(1); }
-    42% { transform: scale(1.15); }
-    70% { transform: scale(1); }
-  }
-
   /* ===== SPARKLE CURSOR ===== */
   .sparkle {
     position: fixed;
@@ -929,7 +902,6 @@
 <!-- 26 WISHES -->
 <section class="wishes-section">
   <h2 class="wishes-title" id="wishesTitle">26 Wishes for You, Saloni 💫</h2>
-  <p class="wishes-subtitle" id="wishesSubtitle">Because you deserve one for every year of being awesome</p>
   <div class="wishes-grid" id="wishesGrid"></div>
 </section>
 
@@ -937,7 +909,7 @@
 
 <!-- CAKE INTERACTION -->
 <section class="cake-section">
-  <h2 class="cake-title" id="cakeTitle">Make a Wish, Saloni! 🎂</h2>
+  <h2 class="cake-title" id="cakeTitle">Make a Wish! 🎂</h2>
   <div class="cake-container" id="cakeContainer">
     <div class="candles" id="candles"></div>
     <div class="cake-top"></div>
@@ -960,7 +932,7 @@
 <!-- FOOTER -->
 <footer class="footer">
   <div class="footer-text">
-    Happy 26th, Saloni! <span class="footer-heart">♥</span> Rushikesh
+    Happy 26th, Saloni!
   </div>
 </footer>
 
@@ -997,7 +969,7 @@ const wishes = [
   "I hope you surprise yourself this year with what you can actually pull off",
   "May that curiosity of yours always lead you somewhere interesting",
   "Wishing you way more good days than bad ones this year",
-  "Happy 26th, Saloni. Genuinely glad to know you, and I'm cheering for you all the way ✨"
+  "Here's to 26! I'm genuinely glad to know you, Saloni, and I'm cheering for you all the way. May this year bring you everything you're hoping for and a few amazing surprises you didn't see coming ✨"
 ];
 
 // ===== PRELOADER =====
@@ -1155,7 +1127,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15 });
 
-document.querySelectorAll('.message-card, .wish-card, .wishes-title, .wishes-subtitle, .cake-title, .cake-container, .blow-btn').forEach(el => observer.observe(el));
+document.querySelectorAll('.message-card, .wish-card, .wishes-title, .cake-title, .cake-container, .blow-btn').forEach(el => observer.observe(el));
 
 // ===== SPARKLE CURSOR =====
 let sparkleThrottle = 0;
